@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>旋转五子棋</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="game-area" aria-label="旋转五子棋">
+        <div class="topbar">
+          <div>
+            <h1>旋转五子棋</h1>
+            <p id="statusText">黑方先手，请落子。</p>
+          </div>
+          <button id="resetButton" class="ghost-button" type="button">重开</button>
+        </div>
+
+        <div class="board-picker" aria-label="选择棋盘">
+          <button class="board-choice active" type="button" data-board-style="compact">
+            <span>紧凑棋盘</span>
+          </button>
+          <button class="board-choice" type="button" data-board-style="cross">
+            <span>十字棋盘</span>
+          </button>
+        </div>
+
+        <div class="board-wrap">
+          <div id="board" class="board" role="grid" aria-label="6乘6棋盘"></div>
+        </div>
+
+        <div class="controls" aria-label="旋转控制">
+          <div class="turn-card">
+            <span class="label">当前</span>
+            <span id="currentPlayer" class="player-chip black">黑方</span>
+          </div>
+          <div class="turn-card">
+            <span class="label">阶段</span>
+            <span id="phaseText">落子</span>
+          </div>
+          <button id="undoButton" class="ghost-button" type="button">悔棋</button>
+        </div>
+
+        <div id="rotationPanel" class="rotation-panel" aria-label="选择象限旋转">
+          <button class="rotate-button" type="button" data-quadrant="0" data-dir="-1">
+            <span>左上</span>
+            <strong>↺</strong>
+          </button>
+          <button class="rotate-button" type="button" data-quadrant="0" data-dir="1">
+            <span>左上</span>
+            <strong>↻</strong>
+          </button>
+          <button class="rotate-button" type="button" data-quadrant="1" data-dir="-1">
+            <span>右上</span>
+            <strong>↺</strong>
+          </button>
+          <button class="rotate-button" type="button" data-quadrant="1" data-dir="1">
+            <span>右上</span>
+            <strong>↻</strong>
+          </button>
+          <button class="rotate-button" type="button" data-quadrant="2" data-dir="-1">
+            <span>左下</span>
+            <strong>↺</strong>
+          </button>
+          <button class="rotate-button" type="button" data-quadrant="2" data-dir="1">
+            <span>左下</span>
+            <strong>↻</strong>
+          </button>
+          <button class="rotate-button" type="button" data-quadrant="3" data-dir="-1">
+            <span>右下</span>
+            <strong>↺</strong>
+          </button>
+          <button class="rotate-button" type="button" data-quadrant="3" data-dir="1">
+            <span>右下</span>
+            <strong>↻</strong>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
